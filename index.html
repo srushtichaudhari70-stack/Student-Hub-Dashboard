@@ -1,0 +1,540 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Srushti's Student Hub</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- ========== SIDEBAR ========== -->
+  <aside class="sidebar" id="sidebar">
+    <div class="sidebar-header">
+      <div class="logo">
+        <span class="logo-icon">🎓</span>
+        <span class="logo-text">Srushti's Student Hub</span>
+      </div>
+      <button class="close-sidebar" id="closeSidebar" aria-label="Close sidebar">✕</button>
+    </div>
+
+    <nav class="sidebar-nav">
+      <ul>
+        <li>
+          <a href="#dashboard" class="nav-link active" data-section="dashboard">
+            <span class="nav-icon">🏠</span>
+            <span class="nav-label">Dashboard</span>
+          </a>
+        </li>
+        <li>
+          <a href="#courses" class="nav-link" data-section="courses">
+            <span class="nav-icon">📚</span>
+            <span class="nav-label">Courses</span>
+          </a>
+        </li>
+        <li>
+          <a href="#projects" class="nav-link" data-section="projects">
+            <span class="nav-icon">💼</span>
+            <span class="nav-label">Projects</span>
+          </a>
+        </li>
+        <li>
+          <a href="#skills" class="nav-link" data-section="skills">
+            <span class="nav-icon">⚡</span>
+            <span class="nav-label">Skills</span>
+          </a>
+        </li>
+        <li>
+          <a href="#certificates" class="nav-link" data-section="certificates">
+            <span class="nav-icon">🏅</span>
+            <span class="nav-label">Certificates</span>
+          </a>
+        </li>
+        <li>
+          <a href="#profile" class="nav-link" data-section="profile">
+            <span class="nav-icon">👤</span>
+            <span class="nav-label">Profile</span>
+          </a>
+        </li>
+      </ul>
+    </nav>
+
+    <div class="sidebar-footer">
+      <a href="#" class="nav-link logout-link">
+        <span class="nav-icon">🚪</span>
+        <span class="nav-label">Log Out</span>
+      </a>
+    </div>
+  </aside>
+
+  <!-- Overlay for mobile sidebar -->
+  <div class="overlay" id="overlay"></div>
+
+  <!-- ========== MAIN CONTENT ========== -->
+  <div class="main-wrapper">
+
+    <!-- ---- TOP NAVIGATION BAR ---- -->
+    <header class="topbar">
+      <div class="topbar-left">
+        <button class="hamburger" id="hamburger" aria-label="Open sidebar">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+        <h1 class="page-title">Dashboard</h1>
+      </div>
+
+      <div class="topbar-right">
+        <div class="search-bar">
+          <span class="search-icon">🔍</span>
+          <input type="text" placeholder="Search courses, projects..." aria-label="Search" />
+        </div>
+
+        <button class="icon-btn notification-btn" aria-label="Notifications">
+          🔔
+          <span class="badge">3</span>
+        </button>
+
+        <!-- Dark Mode Toggle -->
+        <button class="icon-btn theme-toggle" id="themeToggle" aria-label="Toggle dark mode" title="Toggle dark mode">
+          <span class="theme-icon">🌙</span>
+          <span class="theme-label">Dark</span>
+        </button>
+
+        <div class="topbar-profile">
+          <div class="avatar avatar-sm">AJ</div>
+          <span class="profile-name">Alex J.</span>
+        </div>
+      </div>
+    </header>
+
+    <!-- ---- SCROLLABLE CONTENT ---- -->
+    <main class="content" id="mainContent">
+
+      <!-- === WELCOME SECTION === -->
+      <section class="welcome-section" id="dashboard">
+        <div class="welcome-text">
+          <h2>Good Morning, Srushti! 👋</h2>
+          <p>Here's a summary of your academic progress this semester.</p>
+        </div>
+        <div class="welcome-meta">
+          <span class="semester-badge">Fall Semester 2026</span>
+          <span class="gpa-badge">GPA: 3.8</span>
+        </div>
+      </section>
+
+      <!-- === STATS CARDS === -->
+      <section class="stats-grid" aria-label="Statistics">
+
+        <div class="stat-card" data-color="blue">
+          <div class="stat-icon">📚</div>
+          <div class="stat-info">
+            <span class="stat-label">Courses</span>
+            <span class="stat-value" data-target="6">0</span>
+            <span class="stat-sub">Enrolled this semester</span>
+          </div>
+          <div class="stat-trend up">↑ 2 new</div>
+        </div>
+
+        <div class="stat-card" data-color="purple">
+          <div class="stat-icon">💼</div>
+          <div class="stat-info">
+            <span class="stat-label">Projects</span>
+            <span class="stat-value" data-target="12">0</span>
+            <span class="stat-sub">Completed so far</span>
+          </div>
+          <div class="stat-trend up">↑ 4 this term</div>
+        </div>
+
+        <div class="stat-card" data-color="green">
+          <div class="stat-icon">⚡</div>
+          <div class="stat-info">
+            <span class="stat-label">Skills</span>
+            <span class="stat-value" data-target="9">0</span>
+            <span class="stat-sub">Technologies learned</span>
+          </div>
+          <div class="stat-trend up">↑ 3 added</div>
+        </div>
+
+      </section>
+
+      <!-- === RECENT PROJECTS === -->
+      <section class="section-card" id="projects">
+        <div class="section-header">
+          <h3>Recent Projects</h3>
+          <button class="btn-link">View All →</button>
+        </div>
+
+        <div class="projects-list">
+
+          <div class="project-item">
+            <div class="project-icon" style="background: var(--blue-light); color: var(--blue)">🏆</div>
+            <div class="project-details">
+              <h4>CertWise</h4>
+              <p>A smart certification tracker to organise and showcase earned credentials</p>
+              <div class="project-tags">
+                <span class="tag">HTML</span>
+                <span class="tag">CSS</span>
+                <span class="tag">JavaScript</span>
+              </div>
+            </div>
+            <div class="project-status">
+              <span class="status-badge completed">Completed</span>
+              <span class="project-date">Sep 2026</span>
+            </div>
+          </div>
+
+          <div class="project-item">
+            <div class="project-icon" style="background: var(--purple-light); color: var(--purple)">🎓</div>
+            <div class="project-details">
+              <h4>ScholarHub</h4>
+              <p>A scholarship discovery and application management platform for students</p>
+              <div class="project-tags">
+                <span class="tag">Python</span>
+                <span class="tag">Flask</span>
+                <span class="tag">SQL</span>
+              </div>
+            </div>
+            <div class="project-status">
+              <span class="status-badge in-progress">In Progress</span>
+              <span class="project-date">Oct 2026</span>
+            </div>
+          </div>
+
+          <div class="project-item">
+            <div class="project-icon" style="background: var(--green-light); color: var(--green)">🔢</div>
+            <div class="project-details">
+              <h4>Advanced Calculator</h4>
+              <p>A feature-rich calculator with scientific functions and history log</p>
+              <div class="project-tags">
+                <span class="tag">JavaScript</span>
+                <span class="tag">CSS Grid</span>
+              </div>
+            </div>
+            <div class="project-status">
+              <span class="status-badge completed">Completed</span>
+              <span class="project-date">Aug 2026</span>
+            </div>
+          </div>
+
+        </div>
+      </section>
+
+      <!-- === LEARNING PROGRESS === -->
+      <section class="section-card" id="learning-progress">
+        <div class="section-header">
+          <h3>Learning Progress</h3>
+          <span class="semester-tag">Fall 2026</span>
+        </div>
+
+        <div class="learning-progress-list">
+
+          <div class="lp-item">
+            <div class="lp-meta">
+              <span class="lp-label">HTML &amp; CSS</span>
+              <span class="lp-right">
+                <span class="lp-percent">85%</span>
+                <span class="lp-status-dot" style="background: var(--blue)"></span>
+              </span>
+            </div>
+            <div class="skill-bar">
+              <div class="skill-fill lp-fill" data-width="85" style="background: var(--blue)"></div>
+            </div>
+          </div>
+
+          <div class="lp-item">
+            <div class="lp-meta">
+              <span class="lp-label">JavaScript</span>
+              <span class="lp-right">
+                <span class="lp-percent">70%</span>
+                <span class="lp-status-dot" style="background: var(--purple)"></span>
+              </span>
+            </div>
+            <div class="skill-bar">
+              <div class="skill-fill lp-fill" data-width="70" style="background: var(--purple)"></div>
+            </div>
+          </div>
+
+          <div class="lp-item">
+            <div class="lp-meta">
+              <span class="lp-label">C++</span>
+              <span class="lp-right">
+                <span class="lp-percent">75%</span>
+                <span class="lp-status-dot" style="background: var(--green)"></span>
+              </span>
+            </div>
+            <div class="skill-bar">
+              <div class="skill-fill lp-fill" data-width="75" style="background: var(--green)"></div>
+            </div>
+          </div>
+
+          <div class="lp-item">
+            <div class="lp-meta">
+              <span class="lp-label">DSA</span>
+              <span class="lp-right">
+                <span class="lp-percent">55%</span>
+                <span class="lp-status-dot" style="background: var(--orange)"></span>
+              </span>
+            </div>
+            <div class="skill-bar">
+              <div class="skill-fill lp-fill" data-width="55" style="background: var(--orange)"></div>
+            </div>
+          </div>
+
+        </div>
+      </section>
+
+      <!-- === SKILLS SECTION === -->
+      <section class="section-card" id="skills">
+        <div class="section-header">
+          <h3>Skills & Technologies</h3>
+          <button class="btn-link">Add Skill</button>
+        </div>
+
+        <div class="skills-grid">
+
+          <div class="skill-item">
+            <div class="skill-header">
+              <span class="skill-name">HTML & CSS</span>
+              <span class="skill-percent">90%</span>
+            </div>
+            <div class="skill-bar">
+              <div class="skill-fill" data-width="90" style="background: var(--blue)"></div>
+            </div>
+          </div>
+
+          <div class="skill-item">
+            <div class="skill-header">
+              <span class="skill-name">JavaScript</span>
+              <span class="skill-percent">75%</span>
+            </div>
+            <div class="skill-bar">
+              <div class="skill-fill" data-width="75" style="background: var(--purple)"></div>
+            </div>
+          </div>
+
+          <div class="skill-item">
+            <div class="skill-header">
+              <span class="skill-name">Python</span>
+              <span class="skill-percent">70%</span>
+            </div>
+            <div class="skill-bar">
+              <div class="skill-fill" data-width="70" style="background: var(--green)"></div>
+            </div>
+          </div>
+
+          <div class="skill-item">
+            <div class="skill-header">
+              <span class="skill-name">SQL</span>
+              <span class="skill-percent">60%</span>
+            </div>
+            <div class="skill-bar">
+              <div class="skill-fill" data-width="60" style="background: var(--orange)"></div>
+            </div>
+          </div>
+
+          <div class="skill-item">
+            <div class="skill-header">
+              <span class="skill-name">Node.js</span>
+              <span class="skill-percent">50%</span>
+            </div>
+            <div class="skill-bar">
+              <div class="skill-fill" data-width="50" style="background: var(--blue)"></div>
+            </div>
+          </div>
+
+          <div class="skill-item">
+            <div class="skill-header">
+              <span class="skill-name">Git & GitHub</span>
+              <span class="skill-percent">80%</span>
+            </div>
+            <div class="skill-bar">
+              <div class="skill-fill" data-width="80" style="background: var(--purple)"></div>
+            </div>
+          </div>
+
+        </div>
+      </section>
+
+      <!-- === CERTIFICATE TRACKER === -->
+      <section class="section-card" id="certificates">
+
+        <div class="section-header">
+          <h3>🏅 Certificate Tracker</h3>
+          <span class="cert-count-badge" id="certCountBadge">0 Certificates</span>
+        </div>
+
+        <!-- ADD CERTIFICATE FORM -->
+        <form class="cert-form" id="certForm" novalidate>
+          <div class="cert-form-grid">
+
+            <div class="cert-field">
+              <label for="certName">Certificate Name <span class="req">*</span></label>
+              <input
+                type="text"
+                id="certName"
+                placeholder="e.g. Responsive Web Design"
+                autocomplete="off"
+                maxlength="100"
+              />
+              <span class="field-error" id="certNameError"></span>
+            </div>
+
+            <div class="cert-field">
+              <label for="certOrg">Issuing Organization <span class="req">*</span></label>
+              <input
+                type="text"
+                id="certOrg"
+                placeholder="e.g. freeCodeCamp"
+                autocomplete="off"
+                maxlength="100"
+              />
+              <span class="field-error" id="certOrgError"></span>
+            </div>
+
+            <div class="cert-field">
+              <label for="certDate">Issue Date <span class="req">*</span></label>
+              <input
+                type="month"
+                id="certDate"
+              />
+              <span class="field-error" id="certDateError"></span>
+            </div>
+
+            <div class="cert-field">
+              <label for="certCategory">Category <span class="req">*</span></label>
+              <select id="certCategory" class="cert-select">
+                <option value="">— Select a category —</option>
+                <option value="Web Development">Web Development</option>
+                <option value="Programming">Programming</option>
+                <option value="DSA">DSA</option>
+                <option value="Database">Database</option>
+                <option value="AI/ML">AI/ML</option>
+                <option value="Other">Other</option>
+              </select>
+              <span class="field-error" id="certCategoryError"></span>
+            </div>
+
+            <div class="cert-field">
+              <label for="certUrl">Certificate URL <span class="req-optional">(optional)</span></label>
+              <input
+                type="url"
+                id="certUrl"
+                placeholder="https://credential.example.com/..."
+                autocomplete="off"
+              />
+              <span class="field-error" id="certUrlError"></span>
+            </div>
+
+          </div>
+
+          <div class="cert-form-footer">
+            <button type="submit" class="cert-add-btn" id="certAddBtn">
+              <span>＋ Add Certificate</span>
+            </button>
+          </div>
+        </form>
+
+        <!-- SEARCH + CATEGORY FILTER ROW -->
+        <div class="cert-controls">
+          <div class="cert-search-wrap">
+            <span class="cert-search-icon">🔍</span>
+            <input
+              type="text"
+              id="certSearch"
+              class="cert-search-input"
+              placeholder="Search by name or organisation…"
+              aria-label="Search certificates"
+            />
+            <button class="cert-search-clear" id="certSearchClear" aria-label="Clear search" title="Clear search">✕</button>
+          </div>
+
+          <div class="cert-filter-wrap">
+            <span class="cert-filter-icon">🏷️</span>
+            <select id="certCategoryFilter" class="cert-select cert-filter-select" aria-label="Filter by category">
+              <option value="">All Categories</option>
+              <option value="Web Development">Web Development</option>
+              <option value="Programming">Programming</option>
+              <option value="DSA">DSA</option>
+              <option value="Database">Database</option>
+              <option value="AI/ML">AI/ML</option>
+              <option value="Other">Other</option>
+            </select>
+          </div>
+        </div>
+
+        <!-- CERTIFICATES GRID (populated by JS) -->
+        <div class="cert-grid" id="certGrid">
+          <!-- empty state shown by JS when no certs exist -->
+        </div>
+
+      </section>
+
+      <!-- === PROFILE SECTION === -->
+      <section class="section-card" id="profile">
+        <div class="section-header">
+          <h3>Student Profile</h3>
+          <button class="btn-link">Edit Profile</button>
+        </div>
+
+        <div class="profile-body">
+          <div class="profile-left">
+            <div class="avatar avatar-lg">AJ</div>
+            <h4 class="profile-name-large">Alex Johnson</h4>
+            <p class="profile-major">B.Sc. Computer Science</p>
+            <p class="profile-year">3rd Year · Fall 2026</p>
+            <div class="profile-badges">
+              <span class="tag">Dean's List</span>
+              <span class="tag">Tech Club</span>
+              <span class="tag">Hackathon Winner</span>
+            </div>
+          </div>
+
+          <div class="profile-right">
+            <div class="info-grid">
+              <div class="info-item">
+                <span class="info-label">Student ID</span>
+                <span class="info-value">CS2024-0312</span>
+              </div>
+              <div class="info-item">
+                <span class="info-label">Email</span>
+                <span class="info-value">alex.j@university.edu</span>
+              </div>
+              <div class="info-item">
+                <span class="info-label">Department</span>
+                <span class="info-value">Engineering & Technology</span>
+              </div>
+              <div class="info-item">
+                <span class="info-label">Advisor</span>
+                <span class="info-value">Dr. Sarah Williams</span>
+              </div>
+              <div class="info-item">
+                <span class="info-label">GPA</span>
+                <span class="info-value">3.8 / 4.0</span>
+              </div>
+              <div class="info-item">
+                <span class="info-label">Credits Completed</span>
+                <span class="info-value">72 / 120</span>
+              </div>
+            </div>
+
+            <!-- Credit Progress Bar -->
+            <div class="credit-progress">
+              <div class="skill-header">
+                <span class="skill-name">Degree Completion</span>
+                <span class="skill-percent">60%</span>
+              </div>
+              <div class="skill-bar large">
+                <div class="skill-fill" data-width="60" style="background: linear-gradient(90deg, var(--blue), var(--purple))"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+    </main>
+  </div><!-- end .main-wrapper -->
+
+  <script src="script.js"></script>
+</body>
+</html>
